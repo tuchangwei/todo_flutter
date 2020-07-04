@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: ChangeNotifierProvider(
+    return ChangeNotifierProvider(
       create: (context) => TasksData(),
-      child: SafeArea(
-        child: TasksScreen(),
+      child: MaterialApp(
+        home: TasksScreen(),
       ),
-    ));
+    );
   }
 }

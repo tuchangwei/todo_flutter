@@ -1,6 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/models/tasks_data.dart';
+import 'package:todo/views/add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -83,6 +86,10 @@ class TasksScreen extends StatelessWidget {
           Icons.add,
           size: 30,
         ),
+        onPressed: () {
+          showModalBottomSheet(
+              context: context, builder: (context) => AddTaskScreen());
+        },
       ),
     );
   }

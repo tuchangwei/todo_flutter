@@ -15,4 +15,10 @@ class TasksData extends ChangeNotifier {
     task.toggleDone();
     notifyListeners();
   }
+
+  void addTask(String text) {
+    final task = Task(name: text);
+    _tasks.add(task);
+    notifyListeners();
+  }
 }
